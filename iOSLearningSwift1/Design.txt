@@ -70,7 +70,9 @@ if nextTry >= 10 then try = 0
 // *********************************************************************************
 // Algorithm for getting the next try value, updating the result in the answerMatrix
 // gerate a random x and y
-// check the reportMatrix, if the % is greater than 90% then generate a different problemd
+// check the reportMatrix, if the % is greater than 90% then generate a different problem
+// Base the % on the last 10 tries, so after the 10th try, over write the first try
+
 try = tryMatrix[x][y]
 if try >=10 then try = 0
 provide the problem to the user and then record the result below
@@ -81,14 +83,21 @@ tryMatrix[x][y] = try
 // *********************************************************************************
 // Calculate the values for the report
 // reportMatrix[x][y] stores (%Right)
+
+//***** break steps into functions (check performance with and without functions)
+
 for x = min to max
   for y = min to max
+    numRight = 0  // reset numRight for each math fact
     for currentTry = 0 to 9
         numRight = numRight + answerMatrix[x][y][currentTry]
         currentTry = currentTry + 1
     reportMatrix[x][y] = numRight / 10
   y = y + 1
 x = x + 1
+
+
+
 
 
 
