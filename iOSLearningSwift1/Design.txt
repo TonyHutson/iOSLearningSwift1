@@ -1,0 +1,102 @@
+
+Objective:
+- Track how well the user does with math facts
+
+Design:
+// **** This didn't work
+- Create a two dimensional array for the math facts up to 13x13 (configurable)
+    - A value of green: the math fact has been mastered (after 10 tries, 8/10 correct)
+    - a value of yellow:
+     1   2   3   4   5
+  1  g   g   g   g   g
+  2  g   g   g   g   g
+  3  g   y   y   r   r
+  4  g   y   g   y   r
+  5  g   y   r   r   y
+
+
+  R    TotalTrys    %           R/W
+  0    1            0           W
+  0    2            0           W
+  1    3            .33         R
+  2    4            .5          R
+  2    5            .4          W
+  3    6            .5          R
+  4    7            .57         R
+  5    7            .71         R
+  6    7            .85         R
+  6    8            .75         W
+  7    9            .78         R
+  8    10           .8          R
+  9    11           .82         R
+  10   12           .83         R
+  11   13           .85         R
+  12   14           .86         R
+  13   15           .87         R
+  14   16           .88         R
+  15   17           .88         R
+  16   18           .89         R
+  17   19           .89         R
+  18   20           .9          R
+// ******* Above didn't work
+
+Only look at the last 10 tries
+
+3 dimenstional array  (x) by (x) by (number of tries)
+Stores number right out of 10
+
+Given a fact, if the user provides the right answer then store 1 in the math fact x,x,try location
+
+x   y   try   value
+5   5   0     0
+5   5   1     0
+5   5   2     1
+5   5   3     1
+5   5   4     0
+5   5   5     1
+5   5   6     1
+5   5   7     1
+5   5   8     1
+5   5   9     1
+
+if nextTry >= 10 then try = 0
+  // need a way to store the next try for a combination of facts
+  // can use a 2 dimensional array to store the try number x,y value try
+
+// Calculate the reportMatrix when the program begins to use that to drive frequency a problem is presented to the user
+
+
+
+// *********************************************************************************
+// Algorithm for getting the next try value, updating the result in the answerMatrix
+// gerate a random x and y
+// check the reportMatrix, if the % is greater than 90% then generate a different problemd
+try = tryMatrix[x][y]
+if try >=10 then try = 0
+provide the problem to the user and then record the result below
+answerMatrix[x][y][try] = 1 for correct, 0 for wrong
+try = try + 1
+tryMatrix[x][y] = try
+
+// *********************************************************************************
+// Calculate the values for the report
+// reportMatrix[x][y] stores (%Right)
+for x = min to max
+  for y = min to max
+    for currentTry = 0 to 9
+        numRight = numRight + answerMatrix[x][y][currentTry]
+        currentTry = currentTry + 1
+    reportMatrix[x][y] = numRight / 10
+  y = y + 1
+x = x + 1
+
+
+
+
+
+
+
+
+
+
+
