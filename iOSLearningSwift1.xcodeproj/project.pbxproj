@@ -14,6 +14,8 @@
 		4954008D2173888D009CE25B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4954008B2173888D009CE25B /* LaunchScreen.storyboard */; };
 		4954009521738991009CE25B /* ExploreSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4954009421738991009CE25B /* ExploreSwift.swift */; };
 		4954009721738E4C009CE25B /* Design.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4954009621738E4C009CE25B /* Design.txt */; };
+		4972CE2921763A13003B72F4 /* FactTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972CE2821763A13003B72F4 /* FactTracker.swift */; };
+		497C63A12177B6C500B443FC /* MathProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C63A02177B6C500B443FC /* MathProblem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4954008E2173888D009CE25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4954009421738991009CE25B /* ExploreSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSwift.swift; sourceTree = "<group>"; };
 		4954009621738E4C009CE25B /* Design.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Design.txt; sourceTree = "<group>"; };
+		4972CE2821763A13003B72F4 /* FactTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTracker.swift; sourceTree = "<group>"; };
+		497C63A02177B6C500B443FC /* MathProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathProblem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				495400842173888C009CE25B /* ViewController.swift */,
 				4954009421738991009CE25B /* ExploreSwift.swift */,
 				4954009621738E4C009CE25B /* Design.txt */,
+				4972CE2821763A13003B72F4 /* FactTracker.swift */,
+				497C63A02177B6C500B443FC /* MathProblem.swift */,
 				495400862173888C009CE25B /* Main.storyboard */,
 				495400892173888D009CE25B /* Assets.xcassets */,
 				4954008B2173888D009CE25B /* LaunchScreen.storyboard */,
@@ -142,8 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497C63A12177B6C500B443FC /* MathProblem.swift in Sources */,
 				495400852173888C009CE25B /* ViewController.swift in Sources */,
 				495400832173888C009CE25B /* AppDelegate.swift in Sources */,
+				4972CE2921763A13003B72F4 /* FactTracker.swift in Sources */,
 				4954009521738991009CE25B /* ExploreSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

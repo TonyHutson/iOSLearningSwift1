@@ -66,17 +66,31 @@ if nextTry >= 10 then try = 0
 // Calculate the reportMatrix when the program begins to use that to drive frequency a problem is presented to the user
 
 
+// An factTracker can be generated for each operation type
 
+var additionFactTracer: FactTracker(maxX: 13, maxY: 13, tries: 10)
+
+//Properties
+tryMatrix[x][y] - (stores the next try number)
+answerMatrix[x][y][try] (stores number correct - max 10 tries)
+reportMatrix[x][y] (stores percentage correct)
+
+//Methods
+recordFactStat(x,y,try)
+recordCorrectAnswer(x,y,currentTry)
+generateFactStats()
 // *********************************************************************************
 // Algorithm for getting the next try value, updating the result in the answerMatrix
 // gerate a random x and y
 // check the reportMatrix, if the % is greater than 90% then generate a different problem
 // Base the % on the last 10 tries, so after the 10th try, over write the first try
 
+
 try = tryMatrix[x][y]
 if try >=10 then try = 0
 provide the problem to the user and then record the result below
-answerMatrix[x][y][try] = 1 for correct, 0 for wrong
+recordFactStat(x,y,try)
+//answerMatrix[x][y][try] = 1 for correct, 0 for wrong
 try = try + 1
 tryMatrix[x][y] = try
 
@@ -86,11 +100,20 @@ tryMatrix[x][y] = try
 
 //***** break steps into functions (check performance with and without functions)
 
+generateFactStats()
+
+- What happens if the user has fewer than 10 tries?
+   - The average will be low until there is at least 7 tries (this is acceptable)
+   - This means the report will show red or yellow and all problems will be shown equally
+- What happens if the user has no tries?
+   - The average will be zero becauase the user has no tries (this is acceptable) - same as above
+
 for x = min to max
   for y = min to max
     numRight = 0  // reset numRight for each math fact
     for currentTry = 0 to 9
-        numRight = numRight + answerMatrix[x][y][currentTry]
+        recordCorrectAnswer(x,y,currentTry)
+        //numRight = numRight + answerMatrix[x][y][currentTry]
         currentTry = currentTry + 1
     reportMatrix[x][y] = numRight / 10
   y = y + 1
